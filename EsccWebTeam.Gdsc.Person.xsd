@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:bs7666="http://www.govtalk.gov.uk/people/bs7666"
+           xmlns:adp="http://www.govtalk.gov.uk/people/AddressAndPersonalDetails"
+           xmlns:pdt="http://www.govtalk.gov.uk/people/PersonDescriptives"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           attributeFormDefault="unqualified" elementFormDefault="qualified" 
+           targetNamespace="http://eastsussex.gov.uk/EsccWebTeam.Gdsc" 
+           xmlns:gdsc="http://eastsussex.gov.uk/EsccWebTeam.Gdsc">
+  <xsd:import namespace="http://www.govtalk.gov.uk/people/bs7666" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/bs7666-v2-0.xsd"  />
+  <xsd:import namespace="http://www.govtalk.gov.uk/people/AddressAndPersonalDetails" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/ContactTypes-v1-3.xsd" />
+  <xsd:import namespace="http://www.govtalk.gov.uk/people/PersonDescriptives" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/PersonDescriptiveTypes-v1-1.xsd" />
+  
+  <xsd:element name="Person" type="gdsc:Person" />
+  <xsd:element name="BS7666AddressContainer" type="gdsc:BS7666AddressContainer" />
+  <xsd:complexType name="Person">
+      <xsd:sequence>
+        <xsd:element name="PersonId" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+        <xsd:element name="Name" type="pdt:PersonNameStructure" minOccurs="0" maxOccurs="1" />
+        <xsd:element name="EmailAddresses" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Email" type="adp:EmailStructure" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="TelephoneNumbers" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="UKContactNumber" type="adp:TelephoneStructure" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="FaxNumbers" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="UKContactNumber" type="adp:FaxStructure" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Addresses" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="gdsc:BS7666AddressContainer" minOccurs="0" maxOccurs="unbounded" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  <xsd:complexType name="BS7666AddressContainer">
+    <xsd:sequence>
+      <xsd:element name="AddressId" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="GridReference" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="X" type="xsd:positiveInteger" />
+            <xsd:element name="Y" type="xsd:positiveInteger" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ref="bs7666:BS7666Address" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xs:schema>
