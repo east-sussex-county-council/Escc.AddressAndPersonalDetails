@@ -1,9 +1,6 @@
 using System;
-using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Globalization;
-using System.Threading;
 
 
 namespace EsccWebTeam.Gdsc
@@ -300,7 +297,7 @@ namespace EsccWebTeam.Gdsc
         /// <param name="name">A building name or sub-building name</param>
         /// <returns>True if name begins and ends with a number, or begins with a number and ends with a number and alphanumeric character; false otherwise</returns>
         /// <remarks>"Format 1" is PAF terminology, and code here is based on PAF rules</remarks>
-        internal static bool IsFormat1Name(string name)
+        public static bool IsFormat1Name(string name)
         {
             if (name == null) return true; // if there's no info, no point taking up a line with it
 
