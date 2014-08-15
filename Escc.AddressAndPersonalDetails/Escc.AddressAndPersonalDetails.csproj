@@ -134,6 +134,7 @@
     <Compile Include="AddressValidationType.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GeoCoordinate.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

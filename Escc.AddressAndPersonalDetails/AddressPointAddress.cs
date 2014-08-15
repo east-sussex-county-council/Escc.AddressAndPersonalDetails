@@ -2,7 +2,6 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.Text;
-using System.Text.RegularExpressions;
 using Escc.AddressAndPersonalDetails.Properties;
 
 namespace Escc.AddressAndPersonalDetails
@@ -213,8 +212,8 @@ namespace Escc.AddressAndPersonalDetails
             // *** Premises elements ***
             StringBuilder premElement = new StringBuilder();
 
-            bool subBuildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.SubBuildingName);
-            bool buildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.BuildingName);
+            bool subBuildingNameIsFormat1 = SimpleAddress.IsFormat1Name(this.SubBuildingName);
+            bool buildingNameIsFormat1 = SimpleAddress.IsFormat1Name(this.BuildingName);
             bool premisesOnSeparateLine = ((this.SubBuildingName.Length > 0 && !subBuildingNameIsFormat1) || (this.BuildingName.Length > 0 && !buildingNameIsFormat1));
 
             // sub-building name should not exist without a building name or building number
@@ -353,32 +352,6 @@ namespace Escc.AddressAndPersonalDetails
             addr.AddressLine4 = lines[3];
             addr.AddressLine5 = lines[4];
             return addr;
-        }
-
-
-        /// <summary>
-        /// Gets whether the specified name is a "Format 1" name: ie, whether it is a building name or sub-building name which should on the same line as other address elements
-        /// </summary>
-        /// <param name="name">A building name or sub-building name</param>
-        /// <returns>True if name begins and ends with a number, or begins with a number and ends with a number and alphanumeric character; false otherwise</returns>
-        private static bool IsFormat1Name(string name)
-        {
-            string firstChar = "";
-            string lastChar = "";
-            string lastPair = "";
-
-            if (name.Length >= 1)
-            {
-                firstChar = name.Substring(0, 1);
-                lastChar = name.Substring(name.Length - 1);
-                if (name.Length >= 2) lastPair = name.Substring(name.Length - 2);
-            }
-            else return false;
-
-            Regex numeric = new Regex("^[0-9]$");
-            Regex numericAlpha = new Regex("^[0-9][A-Z]$", RegexOptions.IgnoreCase);
-
-            return (numeric.IsMatch(firstChar) && (numeric.IsMatch(lastChar) || numericAlpha.IsMatch(lastPair)));
         }
 
         #endregion

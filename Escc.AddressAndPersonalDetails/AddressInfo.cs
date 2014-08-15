@@ -42,18 +42,10 @@ namespace Escc.AddressAndPersonalDetails
         /// </summary>
         public BS7666Address BS7666Address { get; set; }
 
-
         /// <summary>
-        /// Gets or sets GIS northing coordinate for the Citizen's address
+        /// Geographic point marking the location of the address
         /// </summary>
-        /// <remarks>Recommended to set the GridEasting and GridNorthing of the BS7666Address instead, since that format will be used in future.</remarks>
-        public int Northing { get; set; }
-
-        /// <summary>
-        /// Gets or sets GIS easting coordinate for the Citizen's address
-        /// </summary>
-        /// <remarks>Recommended to set the GridEasting and GridNorthing of the BS7666Address instead, since that format will be used in future.</remarks>
-        public int Easting { get; set; }
+        public GeoCoordinate GeoCoordinate { get; set; }
 
         /// <summary>
         /// Gets or sets the code which must be confirmed to verify the Citizen's address
