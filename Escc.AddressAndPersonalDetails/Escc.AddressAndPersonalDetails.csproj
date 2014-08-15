@@ -113,7 +113,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Escc.AddressAndPersonalDetails.SerialisedtoBS7666.xslt" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,23 +176,6 @@
     <Compile Include="UKContactNumberCollection.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Content Include="Escc.AddressAndPersonalDetails.BS7666toSimpleAddress.xslt" />
-    <Content Include="Escc.AddressAndPersonalDetails.BS7666toUKpostalAddress.xslt" />
-    <EmbeddedResource Include="bs7666-v2-0.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Escc.AddressAndPersonalDetails.Person.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CommonSimpleTypes-v1-3.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContactTypes-v1-3.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PersonDescriptiveTypes-v1-1.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

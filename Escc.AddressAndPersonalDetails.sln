@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escc.AddressAndPersonalDeta
 EndProject
 Project("{E09DD79A-4488-4AB9-8D3F-A7EEE78BF432}") = "Escc.AddressAndPersonalDetails.NuGet", "Escc.AddressAndPersonalDetails.NuGet\Escc.AddressAndPersonalDetails.NuGet.nuproj", "{389F9C5A-47A2-43EA-BD02-682A3294483A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escc.AddressAndPersonalDetails.Xslt", "Escc.AddressAndPersonalDetails.Xslt\Escc.AddressAndPersonalDetails.Xslt.csproj", "{C5467EB1-64B0-4050-AE27-9AF05CC4CDBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{389F9C5A-47A2-43EA-BD02-682A3294483A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{389F9C5A-47A2-43EA-BD02-682A3294483A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{389F9C5A-47A2-43EA-BD02-682A3294483A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5467EB1-64B0-4050-AE27-9AF05CC4CDBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5467EB1-64B0-4050-AE27-9AF05CC4CDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5467EB1-64B0-4050-AE27-9AF05CC4CDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5467EB1-64B0-4050-AE27-9AF05CC4CDBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
