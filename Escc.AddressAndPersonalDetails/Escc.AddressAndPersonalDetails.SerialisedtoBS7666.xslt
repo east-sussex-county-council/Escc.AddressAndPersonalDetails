@@ -2,7 +2,7 @@
 <!-- 
 Author:      Rick Mason, ESCC web team
 Date:        12 Feb 2011
-Description: This stylesheet can be used to convert the default .NET serialisation of the EsccWebTeam.Gdsc.BS7666Address 
+Description: This stylesheet can be used to convert the default .NET serialisation of the Escc.AddressAndPersonalDetails.BS7666Address 
              class to a representation using the official BS7666 XML schema. It can be used by passing an AddressElement 
              parameter with the name of the address element (but not the path), or by inclusion in another XSL stylesheet 
              where the BS7666Address named template can be called on any element. 
@@ -11,7 +11,7 @@ Description: This stylesheet can be used to convert the default .NET serialisati
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:bs7666="http://www.govtalk.gov.uk/people/bs7666"
-    xmlns:gdsc="http://eastsussex.gov.uk/EsccWebTeam.Gdsc"
+    xmlns:gdsc="http://eastsussex.gov.uk/Escc.AddressAndPersonalDetails"
 >
   <!-- Turn indenting off to avoid generating empty text nodes inside elements with no content -->
   <xsl:output method="xml" indent="no"/>
@@ -40,9 +40,9 @@ Description: This stylesheet can be used to convert the default .NET serialisati
     </xsl:choose>
   </xsl:template>
  
-  <!-- Template to match a serialised EsccWebTeam.Gdsc.BS7666Address class and transform it to BS7666-compliant XML.
+  <!-- Template to match a serialised Escc.AddressAndPersonalDetails.BS7666Address class and transform it to BS7666-compliant XML.
        As an alternative to calling this XSLT using the AddressElement parameter, you can xsl:include it inside
-       another XSLT file and call this template directly on a specific element using <xsl:call-template name="BS7666Address />. 
+       another XSLT file and call this template directly on a specific element using <xsl:call-template name="BS7666Address" />. 
        Use this approach if you need to specify the path to the element, which you can't specify using AddressElement. -->
   <xsl:template name="BS7666Address">
     <xsl:choose>

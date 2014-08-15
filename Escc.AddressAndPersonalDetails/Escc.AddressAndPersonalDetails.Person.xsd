@@ -6,8 +6,8 @@
            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
            attributeFormDefault="unqualified" elementFormDefault="qualified" 
-           targetNamespace="http://eastsussex.gov.uk/EsccWebTeam.Gdsc" 
-           xmlns:gdsc="http://eastsussex.gov.uk/EsccWebTeam.Gdsc">
+           targetNamespace="http://eastsussex.gov.uk/Escc.AddressAndPersonalDetails" 
+           xmlns:gdsc="http://eastsussex.gov.uk/Escc.AddressAndPersonalDetails">
   <xsd:import namespace="http://www.govtalk.gov.uk/people/bs7666" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/bs7666-v2-0.xsd"  />
   <xsd:import namespace="http://www.govtalk.gov.uk/people/AddressAndPersonalDetails" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/ContactTypes-v1-3.xsd" />
   <xsd:import namespace="http://www.govtalk.gov.uk/people/PersonDescriptives" schemaLocation="http://www.eastsussex.gov.uk/xmlschemas/PersonDescriptiveTypes-v1-1.xsd" />

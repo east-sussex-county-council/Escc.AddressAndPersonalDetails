@@ -1,5 +1,5 @@
-Escc.Gdsc
-=========
+Escc.AddressAndPersonalDetails
+==============================
 
 A library for managing UK addresses and personal details.
 

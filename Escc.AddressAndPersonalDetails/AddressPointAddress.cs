@@ -3,9 +3,9 @@ using System.Data;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
-using EsccWebTeam.Gdsc.Properties;
+using Escc.AddressAndPersonalDetails.Properties;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// PAF-based address in Great Britain, supplied by Ordnance Survey ADDRESS-POINT from Royal Mail data
@@ -17,16 +17,6 @@ namespace EsccWebTeam.Gdsc
         private string organisationName = "";
         private string departmentName = "";
         private string pOBoxNumber = "";
-        private string subBuildingName = "";
-        private string buildingName = "";
-        private string buildingNumber = "";
-        private string dependentThoroughfareName = "";
-        private string thoroughfareName = "";
-        private string doubleDependentLocalityName = "";
-        private string dependentLocalityName = "";
-        private string postTown = "";
-        private string postalCounty = "";
-        private string postcode = "";
 
         #endregion
 
@@ -35,153 +25,53 @@ namespace EsccWebTeam.Gdsc
         /// <summary>
         /// Gets or sets an abbreviated form of address referring to one or a collection of addresses that conforms to a specification set by Royal Mail
         /// </summary>
-        public string Postcode
-        {
-            get
-            {
-                return this.postcode;
-            }
-            set
-            {
-                this.postcode = value;
-            }
-        }
+        public string Postcode { get; set; }
 
         /// <summary>
         /// Gets or sets the county name (no longer used by Address Point)
         /// </summary>
-        public string PostalCounty
-        {
-            get
-            {
-                return this.postalCounty;
-            }
-            set
-            {
-                this.postalCounty = value;
-            }
-        }
+        public string PostalCounty { get; set; }
 
         /// <summary>
         /// Gets or sets the town or city in which is located the Royal Mail sorting office from which mail is delivered to its final recipient
         /// </summary>
-        public string PostTown
-        {
-            get
-            {
-                return this.postTown;
-            }
-            set
-            {
-                this.postTown = value;
-            }
-        }
+        public string PostTown { get; set; }
 
         /// <summary>
         /// Gets or sets an area within a post town
         /// </summary>
-        public string DependentLocalityName
-        {
-            get
-            {
-                return this.dependentLocalityName;
-            }
-            set
-            {
-                this.dependentLocalityName = value;
-            }
-        }
+        public string DependentLocalityName { get; set; }
 
         /// <summary>
         /// Gets or sets an area used to distinguish between similar or same thoroughfares within a dependent locality
         /// </summary>
-        public string DoubleDependentLocalityName
-        {
-            get
-            {
-                return this.doubleDependentLocalityName;
-            }
-            set
-            {
-                this.doubleDependentLocalityName = value;
-            }
-        }
+        public string DoubleDependentLocalityName { get; set; }
 
         /// <summary>
         /// Gets or sets a road, track or named access route on which there are Royal Mail delivery points
         /// </summary>
-        public string ThoroughfareName
-        {
-            get
-            {
-                return this.thoroughfareName;
-            }
-            set
-            {
-                this.thoroughfareName = value;
-            }
-        }
+        public string ThoroughfareName { get; set; }
 
         /// <summary>
         /// Gets or sets a named thoroughfare which is within another named thoroughfare
         /// </summary>
-        public string DependentThoroughfareName
-        {
-            get
-            {
-                return this.dependentThoroughfareName;
-            }
-            set
-            {
-                this.dependentThoroughfareName = value;
-            }
-        }
+        public string DependentThoroughfareName { get; set; }
 
         /// <summary>
         /// Gets or sets a number given to a single building or small group of buildings which identifies it from its neighbours; aka postal number
         /// </summary>
-        public string BuildingNumber
-        {
-            get
-            {
-                return this.buildingNumber;
-            }
-            set
-            {
-                this.buildingNumber = value;
-            }
-        }
+        public string BuildingNumber { get; set; }
 
         /// <summary>
         /// Gets or sets a description applied to a single building or small group of buildings
         /// </summary>
-        public string BuildingName
-        {
-            get
-            {
-                return this.buildingName;
-            }
-            set
-            {
-                this.buildingName = value;
-            }
-        }
+        public string BuildingName { get; set; }
 
         /// <summary>
         /// Gets or sets a name and/or number identifying a subdivision of a property
         /// </summary>
         /// <example>Flat 3</example>
-        public string SubBuildingName
-        {
-            get
-            {
-                return this.subBuildingName;
-            }
-            set
-            {
-                this.subBuildingName = value;
-            }
-        }
+        public string SubBuildingName { get; set; }
 
         /// <summary>
         /// Gets or sets the address of a Post Office box
@@ -237,6 +127,7 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         public AddressPointAddress()
         {
+            InitialiseControl(null);
         }
 
         /// <summary>
@@ -270,6 +161,17 @@ namespace EsccWebTeam.Gdsc
         /// <param name="row">A DataRow containing some or all of the Address point field mnemonics</param>
         private void InitialiseControl(DataRow row)
         {
+            SubBuildingName = "";
+            BuildingName = "";
+            BuildingNumber = "";
+            DependentThoroughfareName = "";
+            ThoroughfareName = "";
+            DoubleDependentLocalityName = "";
+            DependentLocalityName = "";
+            PostTown = "";
+            PostalCounty = "";
+            Postcode = "";
+
             if (row != null)
             {
                 this.DepartmentName = row["DP"].ToString().Trim();
@@ -311,65 +213,65 @@ namespace EsccWebTeam.Gdsc
             // *** Premises elements ***
             StringBuilder premElement = new StringBuilder();
 
-            bool subBuildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.subBuildingName);
-            bool buildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.buildingName);
-            bool premisesOnSeparateLine = ((this.subBuildingName.Length > 0 && !subBuildingNameIsFormat1) || (this.buildingName.Length > 0 && !buildingNameIsFormat1));
+            bool subBuildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.SubBuildingName);
+            bool buildingNameIsFormat1 = AddressPointAddress.IsFormat1Name(this.BuildingName);
+            bool premisesOnSeparateLine = ((this.SubBuildingName.Length > 0 && !subBuildingNameIsFormat1) || (this.BuildingName.Length > 0 && !buildingNameIsFormat1));
 
             // sub-building name should not exist without a building name or building number
-            if (this.subBuildingName.Length > 0 && (this.buildingName.Length > 0 || this.buildingNumber.Length > 0))
+            if (this.SubBuildingName.Length > 0 && (this.BuildingName.Length > 0 || this.BuildingNumber.Length > 0))
             {
-                premElement.Append(textInfo.ToTitleCase(this.subBuildingName.ToLower(CultureInfo.CurrentCulture)));
+                premElement.Append(textInfo.ToTitleCase(this.SubBuildingName.ToLower(CultureInfo.CurrentCulture)));
             }
 
-            if (this.buildingName.Length > 0)
+            if (this.BuildingName.Length > 0)
             {
                 if (premElement.Length > 0)
                 {
                     if (subBuildingNameIsFormat1) premElement.Append(" ");
                     else premElement.Append(separator);
                 }
-                premElement.Append(textInfo.ToTitleCase(this.buildingName.ToLower(CultureInfo.CurrentCulture)));
+                premElement.Append(textInfo.ToTitleCase(this.BuildingName.ToLower(CultureInfo.CurrentCulture)));
             }
 
             // *** Thoroughfare elements ***
             StringBuilder thoroElement = new StringBuilder();
 
             // Dependent thoroughfare name should not exist without thoroughfare name
-            if (this.dependentThoroughfareName.Length > 0 && this.thoroughfareName.Length > 0) thoroElement.Append(textInfo.ToTitleCase(this.dependentThoroughfareName.ToLower(CultureInfo.CurrentCulture)));
+            if (this.DependentThoroughfareName.Length > 0 && this.ThoroughfareName.Length > 0) thoroElement.Append(textInfo.ToTitleCase(this.DependentThoroughfareName.ToLower(CultureInfo.CurrentCulture)));
 
-            if (this.thoroughfareName.Length > 0)
+            if (this.ThoroughfareName.Length > 0)
             {
                 if (thoroElement.Length > 0) thoroElement.Append(separator);
-                thoroElement.Append(textInfo.ToTitleCase(this.thoroughfareName.ToLower(CultureInfo.CurrentCulture)));
+                thoroElement.Append(textInfo.ToTitleCase(this.ThoroughfareName.ToLower(CultureInfo.CurrentCulture)));
             }
 
             // *** Locality elements ***
             StringBuilder locaElement = new StringBuilder();
 
             // Double-dependent locality should not exist without a dependent locality
-            if (this.doubleDependentLocalityName.Length > 0 && this.dependentLocalityName.Length > 0) locaElement.Append(textInfo.ToTitleCase(this.doubleDependentLocalityName.ToLower(CultureInfo.CurrentCulture)));
+            if (this.DoubleDependentLocalityName.Length > 0 && this.DependentLocalityName.Length > 0) locaElement.Append(textInfo.ToTitleCase(this.DoubleDependentLocalityName.ToLower(CultureInfo.CurrentCulture)));
 
-            if (this.dependentLocalityName.Length > 0)
+            if (this.DependentLocalityName.Length > 0)
             {
                 if (locaElement.Length > 0) locaElement.Append(separator);
-                locaElement.Append(textInfo.ToTitleCase(this.dependentLocalityName.ToLower(CultureInfo.CurrentCulture)));
+                locaElement.Append(textInfo.ToTitleCase(this.DependentLocalityName.ToLower(CultureInfo.CurrentCulture)));
             }
-            if (this.postTown.Length > 0)
+            if (this.PostTown.Length > 0)
             {
                 if (locaElement.Length > 0) locaElement.Append(separator);
-                locaElement.Append(textInfo.ToTitleCase(this.postTown.ToLower(CultureInfo.CurrentCulture)));
+                locaElement.Append(textInfo.ToTitleCase(this.PostTown.ToLower(CultureInfo.CurrentCulture)));
             }
-            if (this.postalCounty.Length > 0)
+            if (this.PostalCounty.Length > 0)
             {
                 if (locaElement.Length > 0) locaElement.Append(separator);
-                locaElement.Append(textInfo.ToTitleCase(this.postalCounty.ToLower(CultureInfo.CurrentCulture)));
+                locaElement.Append(textInfo.ToTitleCase(this.PostalCounty.ToLower(CultureInfo.CurrentCulture)));
             }
 
             // Building number goes in front of thoroughfare element or locality element
-            if (this.buildingNumber.Length > 0)
+            if (this.BuildingNumber.Length > 0)
             {
-                if (thoroElement.Length > 0) thoroElement.Insert(0, this.buildingNumber + " ");
-                else if (locaElement.Length > 0) locaElement.Insert(0, this.buildingNumber + " ");
+                if (thoroElement.Length > 0) thoroElement.Insert(0, this.BuildingNumber + " ");
+                else if (locaElement.Length > 0) locaElement.Insert(0, this.BuildingNumber + " ");
             }
 
             // Sub-building name and building name may have to go in front again if Format 1
@@ -437,10 +339,10 @@ namespace EsccWebTeam.Gdsc
                 lineCount++;
             }
 
-            if (this.postcode.Length > 0)
+            if (this.Postcode.Length > 0)
             {
-                if (lineCount < 4) lines[lineCount] = AddressInfo.AddSpaceToPostcode(this.postcode);
-                else lines[4] += "  " + AddressInfo.AddSpaceToPostcode(this.postcode);
+                if (lineCount < 4) lines[lineCount] = AddressInfo.AddSpaceToPostcode(this.Postcode);
+                else lines[4] += "  " + AddressInfo.AddSpaceToPostcode(this.Postcode);
             }
 
             // Put 5 lines into simple address

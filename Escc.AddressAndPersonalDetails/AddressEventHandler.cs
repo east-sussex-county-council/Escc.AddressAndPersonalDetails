@@ -1,6 +1,4 @@
-using System;
-
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
 	/// <summary>
 	/// Delegate signiture for AddressEventHandler

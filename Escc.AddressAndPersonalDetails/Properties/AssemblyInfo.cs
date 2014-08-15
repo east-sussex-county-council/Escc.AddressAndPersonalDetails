@@ -1,23 +1,22 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security.Permissions;
-using System.Security;
-using System.Web;
 using System.Resources;
+using System.Security;
+using System.Security.Permissions;
+using System.Web;
 
 //
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("EsccWebTeam.Gdsc")]
-[assembly: AssemblyDescription("Data model for the UK Government Data Standards Catalogue")]
+[assembly: AssemblyTitle("Escc.AddressAndPersonalDetails")]
+[assembly: AssemblyDescription("A library for managing UK addresses and personal details based on the UK Government Data Standards Catalogue")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("East Sussex County Council")]
-[assembly: AssemblyProduct("EsccWebTeam.Gdsc")]
+[assembly: AssemblyProduct("Escc.AddressAndPersonalDetails")]
 [assembly: AssemblyCopyright("East Sussex County Council")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]		
+[assembly: AssemblyCulture("")]
 
 //
 // Version information for an assembly consists of the following four values:
@@ -62,11 +61,11 @@ using System.Resources;
 
 
 // Recommended by FxCop
-[assembly:System.Runtime.InteropServices.ComVisible(false)]
-[assembly:System.CLSCompliant(true)]
+[assembly: System.Runtime.InteropServices.ComVisible(false)]
+[assembly: System.CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en-GB")]
 
 // Assembly gets permission to do nothing except execute
-[assembly: AspNetHostingPermission(SecurityAction.RequestMinimum, Level=AspNetHostingPermissionLevel.Minimal)] // use System.Web.HttpUtility object
+[assembly: AspNetHostingPermission(SecurityAction.RequestMinimum, Level = AspNetHostingPermissionLevel.Minimal)] // use System.Web.HttpUtility object
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, Execution = true)]
 [assembly: PermissionSet(SecurityAction.RequestOptional, Name = "Nothing")]

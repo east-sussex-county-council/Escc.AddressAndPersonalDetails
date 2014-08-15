@@ -19,14 +19,14 @@
     </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>EsccWebTeam.Gdsc</AssemblyName>
+    <AssemblyName>Escc.AddressAndPersonalDetails</AssemblyName>
     <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>EsccWebTeam.Gdsc</RootNamespace>
+    <RootNamespace>Escc.AddressAndPersonalDetails</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -61,7 +61,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>bin\Debug\EsccWebTeam.Gdsc.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Escc.AddressAndPersonalDetails.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -87,7 +87,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>bin\Release\EsccWebTeam.Gdsc.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Escc.AddressAndPersonalDetails.xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -107,21 +107,13 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web">
-      <Name>System.Web</Name>
-    </Reference>
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
-    <Content Include="EsccWebTeam.Gdsc.SerialisedtoBS7666.xslt" />
+    <Content Include="Escc.AddressAndPersonalDetails.SerialisedtoBS7666.xslt" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,7 +135,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="SimpleAddressControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -185,12 +176,12 @@
     <Compile Include="UKContactNumberCollection.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Content Include="EsccWebTeam.Gdsc.BS7666toSimpleAddress.xslt" />
-    <Content Include="EsccWebTeam.Gdsc.BS7666toUKpostalAddress.xslt" />
+    <Content Include="Escc.AddressAndPersonalDetails.BS7666toSimpleAddress.xslt" />
+    <Content Include="Escc.AddressAndPersonalDetails.BS7666toUKpostalAddress.xslt" />
     <EmbeddedResource Include="bs7666-v2-0.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="EsccWebTeam.Gdsc.Person.xsd">
+    <EmbeddedResource Include="Escc.AddressAndPersonalDetails.Person.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonSimpleTypes-v1-3.xsd">
@@ -219,10 +210,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LICENSE.md" />
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

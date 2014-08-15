@@ -13,7 +13,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
-  <xsl:include href="EsccWebTeam.Gdsc.BS7666ToUKPostalAddress.xslt"/>
+  <xsl:include href="Escc.AddressAndPersonalDetails.BS7666ToUKPostalAddress.xslt"/>
 
   <!-- Convert a BS7666 address to a Simple Address -->
 <xsl:template name="BS7666AddressToSimpleAddress">

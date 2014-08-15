@@ -1,9 +1,11 @@
 #region Using Directives
+
 using System;
 using System.Collections.Generic;
+
 #endregion
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// A collection of addresses in a format compliant with National Land and Property Gazetteer and e-GIF

@@ -1,11 +1,12 @@
 #region Using Directives
+
 using System;
-using System.Collections;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
+
 #endregion
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
 	/// <summary>
 	/// Collection of parts of a name where the same part of a name occurs more than once, eg multiple given names

@@ -1,12 +1,10 @@
 using System;
 using System.Globalization;
-using System.Resources;
-using System.Text;
 using System.Text.RegularExpressions;
-using EsccWebTeam.Gdsc.Properties;
 using System.Xml.Serialization;
+using Escc.AddressAndPersonalDetails.Properties;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// The string of characters that identifies an addressee's post box on the Internet. (In other words it's an email address.)

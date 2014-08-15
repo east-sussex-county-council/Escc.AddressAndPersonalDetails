@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// Person name definition from the <a href="http://www.govtalk.gov.uk/schemasstandards/schemalibrary_list.asp?subjects=17">Address and Personal Details Standard v2.0</a>
@@ -12,11 +12,8 @@ namespace EsccWebTeam.Gdsc
 
         #region Fields
 
-        private PersonPartialNameCollection title;
-        private PersonPartialNameCollection givenName;
         private string familyName;
         private string initials;
-        private PersonPartialNameCollection suffix;
         private string fullName;
         private string requestedName;
 
@@ -70,14 +67,7 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         /// <value>The suffixes.</value>
         /// <example>OBE, MBE, BSc, JP, GM</example>
-        public PersonPartialNameCollection Suffixes
-        {
-            get
-            {
-                return this.suffix;
-            }
-
-        }
+        public PersonPartialNameCollection Suffixes { get; private set; }
 
 
         /// <summary>
@@ -128,14 +118,7 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         /// <value>The forenames or given names of a person.</value>
         /// <example>John</example>
-        public PersonPartialNameCollection GivenNames
-        {
-            get
-            {
-                return this.givenName;
-            }
-
-        }
+        public PersonPartialNameCollection GivenNames { get; private set; }
 
 
         /// <summary>
@@ -143,14 +126,7 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         /// <value>The titles.</value>
         /// <example>Mr, Mrs, Miss, Ms, Dr, Brigadier General, and so on</example>
-        public PersonPartialNameCollection Titles
-        {
-            get
-            {
-                return this.title;
-            }
-
-        }
+        public PersonPartialNameCollection Titles { get; private set; }
 
         #endregion Properties
 
@@ -164,10 +140,10 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         public PersonName()
         {
-            this.title = new PersonPartialNameCollection(35);
-            this.givenName = new PersonPartialNameCollection(35);
+            this.Titles = new PersonPartialNameCollection(35);
+            this.GivenNames = new PersonPartialNameCollection(35);
             this.familyName = "";
-            this.suffix = new PersonPartialNameCollection(35);
+            this.Suffixes = new PersonPartialNameCollection(35);
             this.initials = "";
         }
         #endregion Constructors

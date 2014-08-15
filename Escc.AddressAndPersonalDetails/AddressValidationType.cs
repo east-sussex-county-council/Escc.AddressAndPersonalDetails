@@ -1,5 +1,5 @@
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// Methods of validating address information

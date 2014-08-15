@@ -1,16 +1,15 @@
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Web;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// An address in a format compliant with National Land and Property Gazetteer and e-GIF
     /// </summary>
     /// <remarks><para>Descriptions of BS7666 fields are taken from "Addresses and Government Data Standards" document available at 
     /// http://www.govtalk.gov.uk/documents/ADDRESS%20PAPER%20WITH%20GDSC%20Revised%202001-12-30.doc</para>
-    /// <para>Use the EsccWebTeam.Gdsc.SerialisedtoBS7666.xslt stylesheet to convert a serialisation of this class to one which 
+    /// <para>Use the Escc.AddressAndPersonalDetails.SerialisedtoBS7666.xslt stylesheet to convert a serialisation of this class to one which 
     /// validates against the BS7666 XML schema v2.0. (XML serialisation was tried to automate this, but caused problems when using 
     /// web services.)</para>
     /// </remarks>
@@ -27,8 +26,6 @@ namespace EsccWebTeam.Gdsc
         private string postcode;
         private bool hasAddress;
         private bool hasAddressCached;
-        private int easting;
-        private int northing;
 
         #endregion // Private fields
 
@@ -43,26 +40,12 @@ namespace EsccWebTeam.Gdsc
         /// <summary>
         /// Gets or sets the easting grid coordinate
         /// </summary>
-        public int GridEasting
-        {
-            get { return this.easting; }
-            set
-            {
-                this.easting = value;
-            }
-        }
+        public int GridEasting { get; set; }
 
         /// <summary>
         /// Gets or sets the northing grid coordinate
         /// </summary>
-        public int GridNorthing
-        {
-            get { return this.northing; }
-            set
-            {
-                this.northing = value;
-            }
-        }
+        public int GridNorthing { get; set; }
 
         /// <summary>
         /// Store the code allocated by the Post Office to identify a postal delivery point (NLPG)
@@ -302,16 +285,6 @@ namespace EsccWebTeam.Gdsc
             {
                 addrCopy.AdministrativeArea = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(addrCopy.AdministrativeArea.ToLower(CultureInfo.CurrentCulture));
             }
-
-            // HTML encode to avoid XSS attacks
-            // (can remove System.Web reference and AspNetHostingPermission demand if this method is moved to a control)
-            addrCopy.Saon = HttpUtility.HtmlEncode(addrCopy.Saon);
-            addrCopy.Paon = HttpUtility.HtmlEncode(addrCopy.Paon);
-            addrCopy.StreetName = HttpUtility.HtmlEncode(addrCopy.StreetName);
-            addrCopy.Locality = HttpUtility.HtmlEncode(addrCopy.Locality);
-            addrCopy.Town = HttpUtility.HtmlEncode(addrCopy.Town);
-            addrCopy.AdministrativeArea = HttpUtility.HtmlEncode(addrCopy.AdministrativeArea);
-            addrCopy.Postcode = HttpUtility.HtmlEncode(addrCopy.Postcode);
 
             // Create a presentational address
             SimpleAddress addr = new SimpleAddress();

@@ -1,9 +1,9 @@
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
-using EsccWebTeam.Gdsc.Properties;
+using Escc.AddressAndPersonalDetails.Properties;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// A number, including any exchange or location code, at which a person or organisation can be contacted in the UK by telephonic means.
@@ -12,17 +12,7 @@ namespace EsccWebTeam.Gdsc
     [Serializable]
     public class UKContactNumber
     {
-
-        #region Field
-
         private string nationalNumber;
-        private string extensionNumber;
-        private string countryCode;
-        private ContactUsage usage;
-        private bool mobile;
-        private bool preferred;
-
-        #endregion Field
 
         #region Properties
 
@@ -30,85 +20,35 @@ namespace EsccWebTeam.Gdsc
         /// Gets or sets a value indicating whether this <see cref="UKContactNumber"/> is preferred.
         /// </summary>
         /// <value><c>true</c> if preferred; otherwise, <c>false</c>.</value>
-        public bool Preferred
-        {
-            get
-            {
-                return this.preferred;
-            }
-            set
-            {
-                this.preferred = value;
-            }
-        }
+        public bool Preferred { get; set; }
 
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="UKContactNumber"/> is a mobile phone.
         /// </summary>
         /// <value><c>true</c> if a mobile phone; otherwise, <c>false</c>.</value>
-        public bool Mobile
-        {
-            get
-            {
-                return this.mobile;
-            }
-            set
-            {
-                this.mobile = value;
-            }
-        }
+        public bool Mobile { get; set; }
 
 
         /// <summary>
         /// Gets or sets the usage.
         /// </summary>
         /// <value>The usage.</value>
-        public ContactUsage Usage
-        {
-            get
-            {
-                return this.usage;
-            }
-            set
-            {
-                this.usage = value;
-            }
-        }
+        public ContactUsage Usage { get; set; }
 
 
         /// <summary>
         /// Gets or sets the country code.
         /// </summary>
         /// <value>The country code.</value>
-        public string CountryCode
-        {
-            get
-            {
-                return this.countryCode;
-            }
-            set
-            {
-                this.countryCode = value;
-            }
-        }
+        public string CountryCode { get; set; }
 
 
         /// <summary>
         /// Gets or sets the extension number.
         /// </summary>
         /// <value>The extension number.</value>
-        public string ExtensionNumber
-        {
-            get
-            {
-                return this.extensionNumber;
-            }
-            set
-            {
-                this.extensionNumber = value;
-            }
-        }
+        public string ExtensionNumber { get; set; }
 
 
         /// <summary>
@@ -164,8 +104,8 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         private void Initialise()
         {
-            this.countryCode = "44";
-            this.usage = ContactUsage.NotSpecified;
+            this.CountryCode = "44";
+            this.Usage = ContactUsage.NotSpecified;
         }
 
         #endregion Constructors
@@ -182,10 +122,10 @@ namespace EsccWebTeam.Gdsc
         {
             StringBuilder num = new StringBuilder();
             num.Append(this.nationalNumber);
-            if (this.extensionNumber != null && this.extensionNumber.Length > 0)
+            if (this.ExtensionNumber != null && this.ExtensionNumber.Length > 0)
             {
                 num.Append(Resources.ContactExtension);
-                num.Append(this.extensionNumber);
+                num.Append(this.ExtensionNumber);
             }
 
             return num.ToString();
@@ -200,7 +140,7 @@ namespace EsccWebTeam.Gdsc
         {
             StringBuilder num = new StringBuilder();
             num.Append("+");
-            num.Append(this.countryCode);
+            num.Append(this.CountryCode);
 
             if (this.nationalNumber.StartsWith("0", StringComparison.Ordinal))
             {

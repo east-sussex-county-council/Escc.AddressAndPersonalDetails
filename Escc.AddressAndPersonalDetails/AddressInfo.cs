@@ -1,5 +1,5 @@
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
     /// Information about a street address, including the address itself in several "standard" formats. 
@@ -8,15 +8,6 @@ namespace EsccWebTeam.Gdsc
     public class AddressInfo
     {
         #region Fields
-
-        private SimpleAddress simpleAddress;
-        private AddressValidationType validationType;
-        private string verificationCode;
-        private int easting;
-        private int northing;
-        private BS7666Address bs7666Address;
-        private AddressPointAddress addressPointAddress;
-        private int addressId;
 
         #endregion
 
@@ -27,9 +18,9 @@ namespace EsccWebTeam.Gdsc
         /// </summary>
         public AddressInfo()
         {
-            this.simpleAddress = new SimpleAddress();
-            this.bs7666Address = new BS7666Address();
-            this.addressPointAddress = new AddressPointAddress();
+            this.SimpleAddress = new SimpleAddress();
+            this.BS7666Address = new BS7666Address();
+            this.AddressPointAddress = new AddressPointAddress();
         }
 
         #endregion
@@ -39,119 +30,45 @@ namespace EsccWebTeam.Gdsc
         /// <summary>
         /// Gets or sets the unique versioned identifier for the address
         /// </summary>
-        public int Id
-        {
-            get { return this.addressId; }
-            set { this.addressId = value; }
-        }
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the Citizen's address in ADDRESS-POINT PAF-based format
         /// </summary>
-        public AddressPointAddress AddressPointAddress
-        {
-            get
-            {
-                return this.addressPointAddress;
-            }
-            set
-            {
-                this.addressPointAddress = value;
-            }
-        }
+        public AddressPointAddress AddressPointAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the Citizen's address in BS7666 format
         /// </summary>
-        public BS7666Address BS7666Address
-        {
-            get
-            {
-                return this.bs7666Address;
-            }
-            set
-            {
-                this.bs7666Address = value;
-            }
-        }
+        public BS7666Address BS7666Address { get; set; }
 
 
         /// <summary>
         /// Gets or sets GIS northing coordinate for the Citizen's address
         /// </summary>
         /// <remarks>Recommended to set the GridEasting and GridNorthing of the BS7666Address instead, since that format will be used in future.</remarks>
-        public int Northing
-        {
-            get
-            {
-                return this.northing;
-            }
-            set
-            {
-                this.northing = value;
-            }
-        }
+        public int Northing { get; set; }
 
         /// <summary>
         /// Gets or sets GIS easting coordinate for the Citizen's address
         /// </summary>
         /// <remarks>Recommended to set the GridEasting and GridNorthing of the BS7666Address instead, since that format will be used in future.</remarks>
-        public int Easting
-        {
-            get
-            {
-                return this.easting;
-            }
-            set
-            {
-                this.easting = value;
-            }
-        }
+        public int Easting { get; set; }
 
         /// <summary>
         /// Gets or sets the code which must be confirmed to verify the Citizen's address
         /// </summary>
-        public string VerificationCode
-        {
-            get
-            {
-                return this.verificationCode;
-            }
-            set
-            {
-                this.verificationCode = value;
-            }
-        }
+        public string VerificationCode { get; set; }
 
         /// <summary>
         /// Gets or sets method of validation for Citizen's current address
         /// </summary>
-        public AddressValidationType ValidationType
-        {
-            get
-            {
-                return this.validationType;
-            }
-            set
-            {
-                this.validationType = value;
-            }
-        }
+        public AddressValidationType ValidationType { get; set; }
 
         /// <summary>
         /// Gets or sets an e-GIF compliant Simple Address. Wherever possible use the BS7666Address or AddressPointAddress to generate a Simple Address instead.
         /// </summary>
-        public SimpleAddress SimpleAddress
-        {
-            get
-            {
-                return this.simpleAddress;
-            }
-            set
-            {
-                this.simpleAddress = value;
-            }
-        }
+        public SimpleAddress SimpleAddress { get; set; }
 
         #endregion
 

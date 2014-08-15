@@ -1,6 +1,6 @@
 using System;
 
-namespace EsccWebTeam.Gdsc
+namespace Escc.AddressAndPersonalDetails
 {
 	/// <summary>
 	/// Indicates whether contact information is for work or personal purposes
