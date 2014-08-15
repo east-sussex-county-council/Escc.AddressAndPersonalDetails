@@ -1,4 +1,5 @@
 
+
 namespace Escc.AddressAndPersonalDetails
 {
     /// <summary>
@@ -61,34 +62,6 @@ namespace Escc.AddressAndPersonalDetails
         /// Gets or sets an e-GIF compliant Simple Address. Wherever possible use the BS7666Address or AddressPointAddress to generate a Simple Address instead.
         /// </summary>
         public SimpleAddress SimpleAddress { get; set; }
-
-        #endregion
-
-        #region Static methods
-
-        /// <summary>
-        /// Adds a space to the expected place in the middle of a postcode which has been entered without spaces
-        /// </summary>
-        /// <param name="postcode"></param>
-        /// <returns></returns>
-        public static string AddSpaceToPostcode(string postcode)
-        {
-            if (postcode != null)
-            {
-                postcode = postcode.Replace(" ", "");
-
-                if (postcode.Length == 6)
-                {
-                    postcode = postcode.Insert(3, " ");
-                }
-                else if (postcode.Length == 7)
-                {
-                    postcode = postcode.Insert(4, " ");
-                }
-            }
-
-            return postcode;
-        }
 
         #endregion
     }
