@@ -11,3 +11,5 @@ It defines types relating to several standards:
 * BS7666 for UK addresses
 * Royal Mail AddressPoint 
 * Royal Mail simple address, for formatting UK addresses
+
+It is packaged as a NuGet package using the [NuBuild](https://github.com/bspell1/NuBuild) project type.
