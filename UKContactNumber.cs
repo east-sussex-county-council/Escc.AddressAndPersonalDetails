@@ -156,7 +156,7 @@ namespace EsccWebTeam.Gdsc
         public UKContactNumber(string nationalNumber)
         {
             this.Initialise();
-            this.nationalNumber = nationalNumber;
+            this.NationalNumber = nationalNumber;
         }
 
         /// <summary>
