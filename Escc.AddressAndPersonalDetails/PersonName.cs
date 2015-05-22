@@ -34,8 +34,11 @@ namespace Escc.AddressAndPersonalDetails
             set
             {
                 string reqName = value;
-                if (reqName != null) reqName = reqName.Trim();
-                if (reqName.Length > 70) reqName = reqName.Substring(0, 70);
+                if (reqName != null)
+                {
+                    reqName = reqName.Trim();
+                    if (reqName.Length > 70) reqName = reqName.Substring(0, 70);
+                }
 
                 this.requestedName = reqName;
             }
@@ -55,8 +58,11 @@ namespace Escc.AddressAndPersonalDetails
             set
             {
                 string full = value;
-                if (full != null) full = full.Trim();
-                if (full.Length > 70) full = full.Substring(0, 70);
+                if (full != null)
+                {
+                    full = full.Trim();
+                    if (full.Length > 70) full = full.Substring(0, 70);
+                }
 
                 this.fullName = full;
             }
@@ -105,8 +111,11 @@ namespace Escc.AddressAndPersonalDetails
             set
             {
                 string family = value;
-                if (family != null) family = family.Trim();
-                if (family.Length > 35) family = family.Substring(0, 35);
+                if (family != null)
+                {
+                    family = family.Trim();
+                    if (family.Length > 35) family = family.Substring(0, 35);
+                }
 
                 this.familyName = family;
             }

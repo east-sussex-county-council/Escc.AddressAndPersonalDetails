@@ -340,8 +340,8 @@ namespace Escc.AddressAndPersonalDetails
 
             if (this.Postcode.Length > 0)
             {
-                if (lineCount < 4) lines[lineCount] = AddressInfo.AddSpaceToPostcode(this.Postcode);
-                else lines[4] += "  " + AddressInfo.AddSpaceToPostcode(this.Postcode);
+                if (lineCount < 4) lines[lineCount] = PostcodeUtilities.Format(this.Postcode);
+                else lines[4] += "  " + PostcodeUtilities.Format(this.Postcode);
             }
 
             // Put 5 lines into simple address
