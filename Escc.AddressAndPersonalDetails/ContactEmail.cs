@@ -10,7 +10,6 @@ namespace Escc.AddressAndPersonalDetails
     /// The string of characters that identifies an addressee's post box on the Internet. (In other words it's an email address.)
     /// </summary>
     /// <remarks>Format is from the <a href="http://www.govtalk.gov.uk/schemasstandards/schemalibrary_list.asp?subjects=17">Address and Personal Details Standard v2.0</a></remarks>
-    [Serializable]
     public class ContactEmail
     {
 

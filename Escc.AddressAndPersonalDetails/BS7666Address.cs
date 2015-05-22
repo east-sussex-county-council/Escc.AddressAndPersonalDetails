@@ -13,7 +13,6 @@ namespace Escc.AddressAndPersonalDetails
     /// validates against the BS7666 XML schema v2.0. (XML serialisation was tried to automate this, but caused problems when using 
     /// web services.)</para>
     /// </remarks>
-    [Serializable]
     public class BS7666Address
     {
         #region Private fields

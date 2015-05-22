@@ -9,7 +9,6 @@ namespace Escc.AddressAndPersonalDetails
     /// A number, including any exchange or location code, at which a person or organisation can be contacted in the UK by telephonic means.
     /// </summary>
     /// <remarks>Format is from the <a href="http://www.govtalk.gov.uk/schemasstandards/schemalibrary_list.asp?subjects=17">Address and Personal Details Standard v2.0</a></remarks>
-    [Serializable]
     public class UKContactNumber
     {
         private string nationalNumber;

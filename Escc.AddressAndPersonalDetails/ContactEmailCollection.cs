@@ -10,7 +10,6 @@ namespace Escc.AddressAndPersonalDetails
     /// <summary>
     /// A collection of email addresses
     /// </summary>
-    [Serializable]
     public class ContactEmailCollection : List<ContactEmail>
     {
         /// <summary>

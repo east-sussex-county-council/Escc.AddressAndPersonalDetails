@@ -5,7 +5,6 @@ namespace Escc.AddressAndPersonalDetails
 	/// <summary>
 	/// Indicates whether contact information is for work or personal purposes
 	/// </summary>
-    [Serializable]
     public enum ContactUsage
 	{
 		/// <summary>

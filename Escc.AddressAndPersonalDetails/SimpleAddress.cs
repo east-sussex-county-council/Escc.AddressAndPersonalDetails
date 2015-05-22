@@ -7,7 +7,6 @@ namespace Escc.AddressAndPersonalDetails
     /// <summary>
     /// A UK Postal Address is a standard 5-line address format, which is e-GIF compliant (though BS7666 is preferred)
     /// </summary>
-    [Serializable]
     public class SimpleAddress
     {
         #region Properties

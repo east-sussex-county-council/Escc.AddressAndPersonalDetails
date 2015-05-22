@@ -10,7 +10,6 @@ namespace Escc.AddressAndPersonalDetails
     /// <summary>
     /// A collection of contact numbers
     /// </summary>
-    [Serializable]
     public class UKContactNumberCollection : List<UKContactNumber>
     {
         /// <summary>

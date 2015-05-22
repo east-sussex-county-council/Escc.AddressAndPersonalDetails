@@ -14,7 +14,6 @@ namespace Escc.AddressAndPersonalDetails
 	/// <example>Joe Fred Harry Smith - "Joe", "Fred" and "Harry" are all given names and would be in this collection</example>
 	/// <example>Brigadier General Sir Fred Smith - "Brigadier General" and "Sir" are both titles and would be in this collection</example>
 	/// <example>Fred Smith MBE, MRCVS - "MBE" and "MRCVS" are both suffixes and would be in this collection</example>
-    [Serializable]
     public class PersonPartialNameCollection : List<string>
 	{
 		private int maximumNameLength;

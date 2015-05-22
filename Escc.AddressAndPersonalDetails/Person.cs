@@ -9,7 +9,6 @@ namespace Escc.AddressAndPersonalDetails
     /// <summary>
     /// Person definition from the <a href="http://www.govtalk.gov.uk/schemasstandards/schemalibrary_list.asp?subjects=17">Address and Personal Details Standard v2.0</a>
     /// </summary>
-    [Serializable]
     public class Person
     {
         #region Properties
