@@ -37,14 +37,9 @@ namespace Escc.AddressAndPersonalDetails
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the easting grid coordinate
+        /// Geographic point marking the location of the address
         /// </summary>
-        public int GridEasting { get; set; }
-
-        /// <summary>
-        /// Gets or sets the northing grid coordinate
-        /// </summary>
-        public int GridNorthing { get; set; }
+        public GeoCoordinate GeoCoordinate { get; set; } = new GeoCoordinate();
 
         /// <summary>
         /// Store the code allocated by the Post Office to identify a postal delivery point (NLPG)
