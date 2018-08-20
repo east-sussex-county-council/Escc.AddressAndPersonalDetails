@@ -2,7 +2,6 @@ using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-using Escc.AddressAndPersonalDetails.Properties;
 
 namespace Escc.AddressAndPersonalDetails
 {

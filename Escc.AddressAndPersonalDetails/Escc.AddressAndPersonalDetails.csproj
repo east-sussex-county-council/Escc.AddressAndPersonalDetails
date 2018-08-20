@@ -1,208 +1,86 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0024354-DD16-43E1-8574-176F8BA4F1CA}</ProjectGuid>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyName>Escc.AddressAndPersonalDetails</AssemblyName>
-    <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Escc.AddressAndPersonalDetails</RootNamespace>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>
-    </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <SignAssembly>true</SignAssembly>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <PublishUrl>http://localhost/EsccWebTeam.Gdsc/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>4.0.0</Version>
+    <Authors>East Sussex County Council</Authors>
+    <Company>East Sussex County Council</Company>
+    <Description>A library for managing UK addresses and personal details based on the UK Government Data Standards Catalogue</Description>
+    <PackageIconUrl>https://www.eastsussex.gov.uk/apple-touch-icon.png</PackageIconUrl>
+    <PackageLicenseUrl>http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</PackageLicenseUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</RepositoryUrl>
+    <PackageTags>address name</PackageTags>
+    <PackageReleaseNotes>4.0.0 targets the .NET Standard</PackageReleaseNotes>
+    <Copyright>East Sussex County Council</Copyright>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>bin\Debug\Escc.AddressAndPersonalDetails.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>false</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Escc.AddressAndPersonalDetails.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>bin\Release\Escc.AddressAndPersonalDetails.xml</DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>true</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>none</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
+    <Compile Update="AddressEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddressEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddressInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddressPointAddress.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddressValidationType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BS7666Address.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BS7666AddressCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ContactEmail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ContactEmailCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ContactUsage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Person.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PersonName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PersonPartialNameCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SimpleAddress.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UKContactNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UKContactNumberCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="AddressEventArgs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AddressEventHandler.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AddressInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AddressPointAddress.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AddressValidationType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GeoCoordinate.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="PostcodeUtilities.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BS7666Address.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BS7666AddressCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ContactEmail.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ContactEmailCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ContactUsage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Person.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PersonName.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PersonPartialNameCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SimpleAddress.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="UKContactNumber.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="UKContactNumberCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="build-nuget.cmd" />
-    <None Include="Escc.AddressAndPersonalDetails.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>if "$(ConfigurationName)"=="Release" "$(ProjectDir)build-nuget.cmd" $(ProjectDir)</PostBuildEvent>
-  </PropertyGroup>
+
 </Project>
