@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>4.0.0</Version>
+    <Version>4.0.1</Version>
     <Authors>East Sussex County Council</Authors>
     <Company>East Sussex County Council</Company>
     <Description>A library for managing UK addresses and personal details based on the UK Government Data Standards Catalogue</Description>
@@ -12,8 +12,10 @@
     <PackageProjectUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</PackageProjectUrl>
     <RepositoryUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</RepositoryUrl>
     <PackageTags>address name</PackageTags>
-    <PackageReleaseNotes>4.0.0 targets the .NET Standard</PackageReleaseNotes>
+    <PackageReleaseNotes>4.0.1 restores the strong name that was removed by mistake</PackageReleaseNotes>
     <Copyright>East Sussex County Council</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
