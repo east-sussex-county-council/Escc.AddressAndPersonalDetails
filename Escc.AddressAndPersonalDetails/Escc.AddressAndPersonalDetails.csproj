@@ -2,20 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>4.0.1</Version>
+    <Version>5.0.0</Version>
     <Authors>East Sussex County Council</Authors>
     <Company>East Sussex County Council</Company>
     <Description>A library for managing UK addresses and personal details based on the UK Government Data Standards Catalogue</Description>
     <PackageIconUrl>https://www.eastsussex.gov.uk/apple-touch-icon.png</PackageIconUrl>
-    <PackageLicenseUrl>http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</PackageProjectUrl>
     <RepositoryUrl>https://github.com/east-sussex-county-council/Escc.AddressAndPersonalDetails</RepositoryUrl>
     <PackageTags>address name</PackageTags>
-    <PackageReleaseNotes>4.0.1 restores the strong name that was removed by mistake</PackageReleaseNotes>
+    <PackageReleaseNotes>5.0.0 removes the strong name</PackageReleaseNotes>
     <Copyright>East Sussex County Council</Copyright>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>s:\_strong names\esccdev.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>false</SignAssembly>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -23,59 +23,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="AddressEventArgs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="AddressEventHandler.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="AddressInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="AddressPointAddress.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="AddressValidationType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="BS7666Address.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="BS7666AddressCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ContactEmail.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ContactEmailCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ContactUsage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Person.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="PersonName.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="PersonPartialNameCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Update="AddressEventArgs.cs" />
+    <Compile Update="AddressEventHandler.cs" />
+    <Compile Update="AddressInfo.cs" />
+    <Compile Update="AddressPointAddress.cs" />
+    <Compile Update="AddressValidationType.cs" />
+    <Compile Update="BS7666Address.cs" />
+    <Compile Update="BS7666AddressCollection.cs" />
+    <Compile Update="ContactEmail.cs" />
+    <Compile Update="ContactEmailCollection.cs" />
+    <Compile Update="ContactUsage.cs" />
+    <Compile Update="Person.cs" />
+    <Compile Update="PersonName.cs" />
+    <Compile Update="PersonPartialNameCollection.cs" />
     <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="SimpleAddress.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UKContactNumber.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UKContactNumberCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Update="SimpleAddress.cs" />
+    <Compile Update="UKContactNumber.cs" />
+    <Compile Update="UKContactNumberCollection.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,6 +51,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
